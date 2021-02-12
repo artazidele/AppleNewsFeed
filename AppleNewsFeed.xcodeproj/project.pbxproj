@@ -3,27 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C2AEEDFB25D6A86C008EEAA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEDFA25D6A86C008EEAA2 /* AppDelegate.swift */; };
 		C2AEEDFD25D6A86C008EEAA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEDFC25D6A86C008EEAA2 /* SceneDelegate.swift */; };
-		C2AEEDFF25D6A86C008EEAA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEDFE25D6A86C008EEAA2 /* ViewController.swift */; };
+		C2AEEDFF25D6A86C008EEAA2 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEDFE25D6A86C008EEAA2 /* NewsFeedViewController.swift */; };
 		C2AEEE0225D6A86C008EEAA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2AEEE0025D6A86C008EEAA2 /* Main.storyboard */; };
 		C2AEEE0425D6A86E008EEAA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2AEEE0325D6A86E008EEAA2 /* Assets.xcassets */; };
 		C2AEEE0725D6A86E008EEAA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2AEEE0525D6A86E008EEAA2 /* LaunchScreen.storyboard */; };
+		C2AEEE1625D6AC33008EEAA2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEE1525D6AC33008EEAA2 /* DetailViewController.swift */; };
+		C2AEEE1925D6AC41008EEAA2 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEE1825D6AC41008EEAA2 /* WebViewController.swift */; };
+		C2AEEE1E25D6AF1C008EEAA2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AEEE1D25D6AF1C008EEAA2 /* Item.swift */; };
+		C2AEEE2325D6B220008EEAA2 /* Gloss in Frameworks */ = {isa = PBXBuildFile; productRef = C2AEEE2225D6B220008EEAA2 /* Gloss */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C2AEEDF725D6A86C008EEAA2 /* AppleNewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleNewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AEEDFA25D6A86C008EEAA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2AEEDFC25D6A86C008EEAA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2AEEDFE25D6A86C008EEAA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2AEEDFE25D6A86C008EEAA2 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		C2AEEE0125D6A86C008EEAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2AEEE0325D6A86E008EEAA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2AEEE0625D6A86E008EEAA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2AEEE0825D6A86E008EEAA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2AEEE1525D6AC33008EEAA2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C2AEEE1825D6AC41008EEAA2 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C2AEEE1D25D6AF1C008EEAA2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2AEEE2325D6B220008EEAA2 /* Gloss in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,50 @@
 		C2AEEDF925D6A86C008EEAA2 /* AppleNewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				C2AEEDFA25D6A86C008EEAA2 /* AppDelegate.swift */,
-				C2AEEDFC25D6A86C008EEAA2 /* SceneDelegate.swift */,
-				C2AEEDFE25D6A86C008EEAA2 /* ViewController.swift */,
-				C2AEEE0025D6A86C008EEAA2 /* Main.storyboard */,
+				C2AEEE1C25D6AF04008EEAA2 /* Model */,
+				C2AEEE0F25D6A88B008EEAA2 /* AppDelegate */,
+				C2AEEE1225D6A8BD008EEAA2 /* Controllers */,
+				C2AEEE1325D6A8CA008EEAA2 /* View */,
 				C2AEEE0325D6A86E008EEAA2 /* Assets.xcassets */,
-				C2AEEE0525D6A86E008EEAA2 /* LaunchScreen.storyboard */,
 				C2AEEE0825D6A86E008EEAA2 /* Info.plist */,
 			);
 			path = AppleNewsFeed;
+			sourceTree = "<group>";
+		};
+		C2AEEE0F25D6A88B008EEAA2 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEEDFA25D6A86C008EEAA2 /* AppDelegate.swift */,
+				C2AEEDFC25D6A86C008EEAA2 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		C2AEEE1225D6A8BD008EEAA2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEEDFE25D6A86C008EEAA2 /* NewsFeedViewController.swift */,
+				C2AEEE1525D6AC33008EEAA2 /* DetailViewController.swift */,
+				C2AEEE1825D6AC41008EEAA2 /* WebViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C2AEEE1325D6A8CA008EEAA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEEE0025D6A86C008EEAA2 /* Main.storyboard */,
+				C2AEEE0525D6A86E008EEAA2 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C2AEEE1C25D6AF04008EEAA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C2AEEE1D25D6AF1C008EEAA2 /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,9 @@
 			dependencies = (
 			);
 			name = AppleNewsFeed;
+			packageProductDependencies = (
+				C2AEEE2225D6B220008EEAA2 /* Gloss */,
+			);
 			productName = AppleNewsFeed;
 			productReference = C2AEEDF725D6A86C008EEAA2 /* AppleNewsFeed.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +156,9 @@
 				Base,
 			);
 			mainGroup = C2AEEDEE25D6A86C008EEAA2;
+			packageReferences = (
+				C2AEEE2125D6B220008EEAA2 /* XCRemoteSwiftPackageReference "Gloss" */,
+			);
 			productRefGroup = C2AEEDF825D6A86C008EEAA2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +186,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2AEEDFF25D6A86C008EEAA2 /* ViewController.swift in Sources */,
+				C2AEEDFF25D6A86C008EEAA2 /* NewsFeedViewController.swift in Sources */,
 				C2AEEDFB25D6A86C008EEAA2 /* AppDelegate.swift in Sources */,
 				C2AEEDFD25D6A86C008EEAA2 /* SceneDelegate.swift in Sources */,
+				C2AEEE1925D6AC41008EEAA2 /* WebViewController.swift in Sources */,
+				C2AEEE1E25D6AF1C008EEAA2 /* Item.swift in Sources */,
+				C2AEEE1625D6AC33008EEAA2 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +391,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C2AEEE2125D6B220008EEAA2 /* XCRemoteSwiftPackageReference "Gloss" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hkellaway/Gloss.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C2AEEE2225D6B220008EEAA2 /* Gloss */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2AEEE2125D6B220008EEAA2 /* XCRemoteSwiftPackageReference "Gloss" */;
+			productName = Gloss;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C2AEEDEF25D6A86C008EEAA2 /* Project object */;
 }
