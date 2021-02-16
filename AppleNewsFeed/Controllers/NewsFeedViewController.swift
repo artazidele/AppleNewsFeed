@@ -11,6 +11,7 @@ import Gloss
 
 class NewsFeedViewController: UIViewController {
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     var items: [Item] = []
 
     @IBOutlet weak var tableView: UITableView!
@@ -19,14 +20,33 @@ class NewsFeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "Apple News"
+        //activityIndicatorView.isHidden = true
+        activityIndicatorView.style = .large
+        tableView.isHidden = true
+        
     }
 
     @IBAction func getDataTapped(_ sender: Any) {
         handleData()
+        activityIndicator(animated: true)
     }
+    func activityIndicator(animated: Bool) {
+        DispatchQueue.main.async {
+            if animated {
+                self.tableView.isHidden = false
+                self.activityIndicatorView.isHidden = false
+                self.activityIndicatorView.startAnimating()
+            } else {
+                self.tableView.isHidden = true
+                self.activityIndicatorView.isHidden = true
+                self.activityIndicatorView.stopAnimating()
+            }
+        }
+    }
+    
     func handleData() {
         
-        let jsonUrl = "http://newsapi.org/v2/everything?q=tesla&from=2021-01-12&sortBy=publishedAt&apiKey=f39cdb6f9a8e4abf8bdbad68f38be49d"
+        let jsonUrl = "http://newsapi.org/v2/everything?q=tesla&from=2021-02-11&sortBy=publishedAt&apiKey=f39cdb6f9a8e4abf8bdbad68f38be49d"
         
         guard let url = URL(string: jsonUrl) else {
             return
@@ -69,6 +89,7 @@ class NewsFeedViewController: UIViewController {
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.activityIndicator(animated: false)
         }
     }
     
@@ -79,22 +100,37 @@ extension NewsFeedViewController: UITableViewDataSource, UITableViewDelegate {
         return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row].title
-        cell.detailTextLabel?.text = items[indexPath.row].description
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as? NewsTableViewCell else {return UITableViewCell()}
+        
+       // cell.textLabel?.text = items[indexPath.row].title
+       // cell.detailTextLabel?.text = items[indexPath.row].description
+        
+        let item = items[indexPath.row]
+        if let image = item.image {
+            cell.newsImageView.image = image
+        }
+        cell.newsTitleLabel.text = item.title
+        cell.newsTitleLabel.numberOfLines = 0
         
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(identifier: "DetailViewController") as? DetailViewController {
-            vc.contentString = items[indexPath.row].description
-            vc.titleString = items[indexPath.row].title
-            vc.webURLString = items[indexPath.row].url
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let vc = storyboard.instantiateViewController(identifier: "DetailViewController") as? DetailViewController else { return }
+        
+        
+        vc.contentString = items[indexPath.row].description
+        vc.titleString = items[indexPath.row].title
+        vc.webURLString = items[indexPath.row].url
+        vc.newsImage = items[indexPath.row].image
             
-            navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
             
-        }
+        
     }
     
 }
