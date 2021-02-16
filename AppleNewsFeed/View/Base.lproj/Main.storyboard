@@ -190,7 +190,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LTu-sM-ywR">
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LTu-sM-ywR">
                                             <rect key="frame" x="25" y="20" width="363" height="104"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ah4-jb-6qy">
@@ -212,6 +212,12 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="LTu-sM-ywR" secondAttribute="trailing" constant="6" id="6ze-6o-0fv"/>
+                                        <constraint firstItem="LTu-sM-ywR" firstAttribute="top" secondItem="UoE-hq-fit" secondAttribute="topMargin" constant="9" id="X3v-zE-tcD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LTu-sM-ywR" secondAttribute="bottom" constant="10" id="bvY-Qr-nnk"/>
+                                        <constraint firstItem="LTu-sM-ywR" firstAttribute="leading" secondItem="UoE-hq-fit" secondAttribute="leadingMargin" constant="5" id="nQz-4x-ejC"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="newsImageView" destination="ah4-jb-6qy" id="7aR-KB-mCa"/>

@@ -20,7 +20,7 @@ class NewsFeedViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "Apple News"
-        //activityIndicatorView.isHidden = true
+        activityIndicatorView.isHidden = true
         activityIndicatorView.style = .large
         tableView.isHidden = true
         
@@ -37,16 +37,17 @@ class NewsFeedViewController: UIViewController {
                 self.activityIndicatorView.isHidden = false
                 self.activityIndicatorView.startAnimating()
             } else {
-                self.tableView.isHidden = true
+                
                 self.activityIndicatorView.isHidden = true
                 self.activityIndicatorView.stopAnimating()
             }
         }
     }
     
+    
     func handleData() {
         
-        let jsonUrl = "http://newsapi.org/v2/everything?q=tesla&from=2021-02-11&sortBy=publishedAt&apiKey=f39cdb6f9a8e4abf8bdbad68f38be49d"
+        let jsonUrl = "http://newsapi.org/v2/everything?q=tesla&from=2021-02-11&to=2021-02-11&sortBy=publishedAt&apiKey=f39cdb6f9a8e4abf8bdbad68f38be49d"
         
         guard let url = URL(string: jsonUrl) else {
             return
