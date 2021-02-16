@@ -331,7 +331,7 @@
         <!--Web View Controller-->
         <scene sceneID="Quz-fR-51E">
             <objects>
-                <viewController id="SqV-tH-RSc" customClass="WebViewController" customModule="AppleNewsFeed" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebStoryboard" id="SqV-tH-RSc" customClass="WebViewController" customModule="AppleNewsFeed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YGh-P6-WPd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
