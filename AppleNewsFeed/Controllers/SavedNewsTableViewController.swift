@@ -41,6 +41,16 @@ class SavedNewsTableViewController: UITableViewController {
         }
         tableView.reloadData()
     }
+    
+    func saveData() {
+        do {
+            try context?.save()
+        } catch {
+            //alert
+            print(error.localizedDescription)
+        }
+        //loadData()
+    }
 
     // MARK: - Table view data source
 
@@ -66,15 +76,10 @@ class SavedNewsTableViewController: UITableViewController {
 
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
-    */
+    
 
     /*
     // Override to support editing the table view.
@@ -85,8 +90,24 @@ class SavedNewsTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }*/
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let alert = UIAlertController(title: "Delete!", message: "Are You sure You want to delete?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { _ in
+                
+                let item = self.savedItems[indexPath.row]
+                
+                self.context?.delete(item)
+                self.saveData()
+                self.loadData()
+                
+            }))
+            self.present(alert, animated: true)
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
